@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <style>
+        table {
+            width: 60%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .add-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #28a745;
+        }
+        .add-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">Product List</h2>
+    <table>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+        </tr>
+        <% products.forEach(product => { %>
+        <tr>
+            <td><%= product.p_Id %></td>
+            <td><%= product.p_name %></td>
+            <td><%= product.category %></td>
+            <td><%= product.price %></td>
+            <td><%= product.stock %></td>
+        </tr>
+        <% }) %>
+    </table>
+
+    <a href="/add-product">
+        <button class="add-btn">Add New Product</button>
+    </a>
+</body>
+</html>
